@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CarCard = () => {
+const CarCard = ({ car }) => {
 	return <div>CarCard</div>;
 };
 

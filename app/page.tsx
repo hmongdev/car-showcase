@@ -7,6 +7,10 @@ export default async function Home() {
 
 	console.log(allCars);
 
+	// check if data is empty
+	const isDataEmpty =
+		!Array.isArray(allCars) || allCars.length < 1 || !allCars;
+
 	return (
 		<main className="overflow-hidden">
 			<Hero />
@@ -28,6 +32,31 @@ export default async function Home() {
 						<CustomFilter title="year" />
 					</div>
 				</div>
+
+				{!isDataEmpty ? (
+					<section>
+						<div className="home__cars-wrapper">
+							{allCars?.map((car) => (
+								<CarCard
+									car={
+										car
+									}
+								/>
+							))}
+						</div>
+					</section>
+				) : (
+					<div className="home__container">
+						<h2 className="text-black text-xl font-bold">
+							Oops
+							<p>
+								{
+									allCars?.message
+								}
+							</p>
+						</h2>
+					</div>
+				)}
 			</div>
 		</main>
 	);
