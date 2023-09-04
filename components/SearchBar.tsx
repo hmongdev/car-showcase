@@ -14,6 +14,7 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
       width={40}
       height={40}
       className='object-contain'
+
     />
   </button>
 );
@@ -34,7 +35,7 @@ const SearchBar = () => {
     updateSearchParams(model.toLowerCase(), manufacturer.toLowerCase());
   };
 
-  const updateSearchParams = (model: string, manufacturer: string) => {
+  const updateSearchParams = (model: string, manufacturer: string,) => {
     // Create a new URLSearchParams object using the current URL search parameters
     const searchParams = new URLSearchParams(window.location.search);
 
@@ -55,7 +56,7 @@ const SearchBar = () => {
     // Generate the new pathname with the updated search parameters
     const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
 
-    router.push(newPathname);
+    router.push(newPathname, {scroll: false});
   };
 
   return (
