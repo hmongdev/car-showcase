@@ -12,7 +12,7 @@ export default async function Home({ searchParams }: any) {
 		model: searchParams.model || '',
 	});
 
-	console.log(allCars);
+	// console.log(allCars);
 
 	// check if data is empty
 	const isDataEmpty =
