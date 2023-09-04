@@ -35,7 +35,7 @@ const SearchBar = () => {
     updateSearchParams(model.toLowerCase(), manufacturer.toLowerCase());
   };
 
-  const updateSearchParams = (model: string, manufacturer: string,) => {
+  const updateSearchParams = (model: string, manufacturer: string) => {
     // Create a new URLSearchParams object using the current URL search parameters
     const searchParams = new URLSearchParams(window.location.search);
 
